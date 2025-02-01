@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Pacifico&display=swap');
+        body {
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f6d365, #fda085);
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease-in-out;
+        }
+        h1 {
+            font-size: 3.5em;
+            font-family: 'Lobster', cursive;
+            text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);
+            animation: neonGlow 1.5s infinite alternate;
+        }
+        @keyframes neonGlow {
+            from { text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7); }
+            to { text-shadow: 6px 6px 20px rgba(255, 255, 255, 1); }
+        }
+        p {
+            font-size: 1.8em;
+            font-family: 'Dancing Script', cursive;
+            max-width: 80%;
+            color: #f8f8f8;
+        }
+        .arrow {
+            font-size: 2.5em;
+            cursor: pointer;
+            animation: bounce 1s infinite alternate;
+            color: #ff4e50;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(10px); }
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background: linear-gradient(45deg, #ff416c, #ff4e50);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 15px rgba(255, 78, 80, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(255, 78, 80, 0.6);
+        }
+        .final {
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="page1" style="background: url('fondo1.jpg') no-repeat center center/cover;">
+        <h1>✨ Te Adoro, mi niña linda ✨</h1>
+        <p>No sabes lo mucho que te amo. Siempre alegras mis días y los vuelves increíbles.</p>
+        <div class="arrow" onclick="showNext()">⬇</div>
+    </div>
+
+    <div class="container hidden" id="page2" style="background: url('fondo2.jpg') no-repeat center center/cover;">
+        <h1>💖 Por eso te vengo a preguntar... 💖</h1>
+        <h2 style="color: #ff4e50; font-size: 2.5em; text-shadow: 3px 3px 10px rgba(255, 78, 80, 0.5); font-family: 'Lobster', cursive;">¿Quieres ser mi San Valentín? 💘</h2>
+        <button onclick="showFinal()">Sí (No se acepta un no como respuesta) 💖</button>
+    </div>
+
+    <div class="container hidden final" id="finalPage" style="background: url('fondo3.jpg') no-repeat center center/cover;">
+        <h1>🌟 Soy muy afortunado de tenerte en mi vida 🌟</h1>
+        <p>No sabes lo mucho que te quiero. Eres una de las cosas más lindas que me han pasado y siempre agradeceré al destino por ponerte en mi camino.</p>
+        <p>💖 Te amo, mi princesa linda. Nunca dudes de eso. 💖</p>
+        <audio autoplay loop>
+            <source src="tu_cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta el audio.
+        </audio>
+    </div>
+
+    <script>
+        function showNext() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+        }
+
+        function showFinal() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('finalPage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
