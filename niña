@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti 💖</title>
+    <style>
+        /* Tu código CSS aquí */
+    </style>
+</head>
+<body>
+    <div class="container" id="page1" style="background: url('fondo1.jpg') no-repeat center center/cover;">
+        <h1>✨ Te Adoro, mi niña linda ✨</h1>
+        <p>No sabes lo mucho que te amo. Siempre alegras mis días y los vuelves increíbles.</p>
+        <div class="arrow" onclick="showNext()">⬇</div>
+    </div>
+
+    <div class="container hidden" id="page2" style="background: url('fondo2.jpg') no-repeat center center/cover;">
+        <h1>💖 Por eso te vengo a preguntar... 💖</h1>
+        <h2 style="color: #ff4e50; font-size: 2.5em; text-shadow: 3px 3px 10px rgba(255, 78, 80, 0.5); font-family: 'Lobster', cursive;">¿Quieres ser mi San Valentín? 💘</h2>
+        <button onclick="showFinal()">Sí (No se acepta un no como respuesta) 💖</button>
+    </div>
+
+    <div class="container hidden final" id="finalPage" style="background: url('fondo3.jpg') no-repeat center center/cover;">
+        <h1>🌟 Soy muy afortunado de tenerte en mi vida 🌟</h1>
+        <p>No sabes lo mucho que te quiero. Eres una de las cosas más lindas que me han pasado y siempre agradeceré al destino por ponerte en mi camino.</p>
+        <p>💖 Te amo, mi princesa linda. Nunca dudes de eso. 💖</p>
+        <audio autoplay loop>
+            <source src="tu_cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta el audio.
+        </audio>
+    </div>
+
+    <script>
+        function showNext() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+        }
+
+        function showFinal() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('finalPage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
